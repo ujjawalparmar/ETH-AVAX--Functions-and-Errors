@@ -16,7 +16,7 @@ You can use Remix, an online Solidity IDE to run this program. To get started, g
 
 Once on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., MYsmartContract.sol). Copy and paste the following code into the file:
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set heigher to "0.8.1" (or another compatible version), and then click on the "Compile MYsmartContract.sol" button.
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set higher to "0.8.1" (or another compatible version), and then click on the "Compile MYsmartContract.sol" button.
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.1;
@@ -49,8 +49,8 @@ Once the contract is deployed, you can interact with it by calling the Weight fu
 
 ## Authors
 
-Metacrafter Chris  
-[@metacraftersio](https://twitter.com/metacraftersio)
+UJJAWAL PARMAR  
+@ujjawalParmar01
 
 
 ## License
