@@ -1,23 +1,21 @@
-// SPDX-License-Identifier: MIT 
-pragma solidity ^0.8.0;
-contract SimpleContract {
-    uint public balance;
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.1;
+
+contract MYsmartContract {
+    uint public mass = 10;
+    uint public volume = 5; // Assuming a volume value for the correction
+    address public owner;
+
     constructor() {
-        balance = 100; 
+        owner = msg.sender;
     }
-    function deposit(uint amount) public {
-        require(amount > 0, "amount deposited ");
-        balance += amount;
+    function Weight(uint _density) public view returns (uint) {
+    require(owner == msg.sender, "You are not the owner");
+    assert(volume > 0);
+        if ((_density * volume) == 0) {
+            revert("Weight of the object cannot be zero");
+        }
+
+        return _density * volume;
     }
-    function withdraw(uint amount) public {
-        require(amount <= balance, "Insufficient balance");
-        balance -= amount;
-    }
-    function testAssert() public view {
-        assert(balance >= 0); 
-    }
-    function forceRevert() public pure {
-        revert(" revert is forced");       
-    }
-    }
-   
+}
