@@ -14,24 +14,38 @@ Which  includes a function called `Weight` that performs this calculation. This 
 
 You can use Remix, an online Solidity IDE to run this program. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-Once on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., HelloWorld.sol). Copy and paste the following code into the file:
+Once on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., MYsmartContract.sol). Copy and paste the following code into the file:
 
-```javascript
-pragma solidity ^0.8.4;
+To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set heigher to "0.8.1" (or another compatible version), and then click on the "Compile MYsmartContract.sol" button.
+```
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.1;
 
-contract HelloWorld {
-    function sayHello() public pure returns (string memory) {
-        return "Hello World!";
+contract MYsmartContract {
+    uint public mass = 100;
+    uint public volume = 50;
+    address public owner;
+
+    constructor() {
+        owner = msg.sender;
+
+    }
+
+    function Weight(uint _density) public view returns (uint) {
+    require(owner == msg.sender, "You are not the owner of this");
+    assert(volume > 0);
+        if ((_density * volume) == 0) {
+            revert("Weight of the object can't be zero");
+        }
+
+        return _density * volume;
     }
 }
 
 ```
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "MYsmartContract" contract from the dropdown menu, and then click on the "Deploy" button.
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
-
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "HelloWorld" contract from the dropdown menu, and then click on the "Deploy" button.
-
-Once the contract is deployed, you can interact with it by calling the sayHello function. Click on the "HelloWorld" contract in the left-hand sidebar, and then click on the "sayHello" function. Finally, click on the "transact" button to execute the function and retrieve the "Hello World!" message.
+Once the contract is deployed, you can interact with it by calling the Weight function to set the value and perform a value variable check to check the value of the variable that is public so we can check. Finally, click on the "transact" button to execute the function and retrieve the values and messages.
 
 ## Authors
 
